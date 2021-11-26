@@ -1,0 +1,33 @@
+package com.count;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/**
+ * To count occurrence of each character 
+ * str =Java
+ *{j:1,a:2,v:1}
+ */
+public class Charcount {
+
+	public static void main(String[] args) {
+
+		//Take input value
+		Scanner in = new Scanner (System.in);
+		//Assign a string value
+		String str = "Sharavanan"; 
+		Map<Character , Integer> CharMapCount = new HashMap<>();
+
+		for(Character c : str.toCharArray()) {
+
+			if(CharMapCount.containsKey(c)) {
+				CharMapCount.put(c, CharMapCount.get(c) + 1);
+			}else {
+				CharMapCount.put(c,1);
+			}
+		}
+		System.out.println(CharMapCount);
+	}
+
+}
